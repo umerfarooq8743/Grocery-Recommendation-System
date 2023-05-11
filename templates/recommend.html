@@ -1,0 +1,170 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery Recommender System</title>
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;500&display=swap');
+    *{
+        font-family: 'Josefin Slab', serif;
+    }
+    .text-white{
+        color:white
+    }
+    .bolder{
+        font-weight: 600;
+      
+    }
+    .font20px{
+        font-size: 30px;
+    }
+    .font20px{
+        font-size: 20px;
+    }
+</style>
+<body style="background-color:black">
+
+    <nav class="navbar text-white" style="background-color:rgb(46, 155, 233)">
+        <a class="navbar-brand text-white font20px bolder">Grocery Recommender</a>
+        <ul class="nav navbar-nav">
+            <li><a href="/" class="text-white font20px ">Home</a></li>
+            <li><a href="/recommend" class="text-muted font20px ">Search Items</a></li> -->
+<!-- <li><a class="text-muted font20px ">Contact</a></li> -->
+<!-- </ul>
+    </nav> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-white" style="font-size:50px">Recommend Books</h1>
+                <form action="/recommend_books" method="post">
+                    <input name="user_input" type="text" class="form-control"><br>
+                    <input type="submit" class="btn btn-lg btn-warning">
+                </form>
+            </div>
+
+            {% if data %}
+
+             {% for i in data %}
+                <div class="col-md-3" style="margin-top:50px">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{i[2]}}">
+                            <p class="text-white">{{i[0]}}</p>
+                            <h4 class="text-white">{{i[1]}}</h4>
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+
+            {% endif %}
+
+
+
+
+        </div>
+    </div>
+
+</body>
+</html> -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Grocery Recommender System</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@200;500&display=swap');
+
+        * {
+            font-family: 'Josefin Slab', serif;
+        }
+
+        .font30px {
+            font-size: 30px;
+        }
+
+        .font20px {
+            font-size: 20px;
+        }
+
+        .font50px {
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand font30px fw-bolder" href="#">Grocery Recommender</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <form action="" class="d-flex">
+                <div class="collapse navbar-collapse me-4" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active font20px" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  font20px" href="/recommend">Search Items</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-white font50px pt-4">Recommend Grocery</h1>
+                <form id="form" action="/recommend_books" method="post">
+                    <input required id="inp" name="user_input" type="text" class="form-control"><br>
+                    <input onclick="changeable()" type="submit" id="btnn" class="btn btn-lg btn-warning">
+                </form>
+            </div>
+            {% if data %} {% for i in data %}
+            <div class="col-md-3 " style="margin-top:50px;">
+                <div class="card bg-dark text-white border-0" style="width: 10rem;">
+
+                    <div class="card-body">
+                        <img src="{{i[2]}}" class="card-img-top" alt="grocery pic">
+                        <p class="mt-2">{{i[0]}}</p>
+                        <p>{{i[1]}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %} {% endif %}
+
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
